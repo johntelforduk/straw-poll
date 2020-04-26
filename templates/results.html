@@ -1,0 +1,16 @@
+<!-- Voting form for the straw poll. -->
+<!doctype html>
+<html>
+<title>Straw Poll - Results</title>
+<body>
+<h1>Results</h1>
+Here are the results!<br><br>
+{% for question in parm_results_list %}
+    {{ question['label']|safe }}<br>
+    {{ question['option1'] }} = {{ question['vote'] }}%<br>
+    {{ question['option2'] }} = {{ 100 - question['vote'] }}%<br><br>
+{% endfor %}
+
+<img src="/static/Elon_Musk_2015.jpg">
+</body>
+</html>

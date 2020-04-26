@@ -1,0 +1,26 @@
+[
+  {
+    "question_id": "DEVS",
+    "label": "Forest (CEO of Amaya) in <a href=\"https://www.imdb.com/title/tt8134186/\">DEVS</a>.",
+    "option1": "Musk",
+    "option2": "Jobs",
+    "option1_img": "Elon_Musk.jpg",
+    "option2_img": "Steve_Jobs.jpg"
+  },
+  {
+    "question_id": "Ex Machina",
+    "label": "Nathan Bateman in <a href=\"https://www.imdb.com/title/tt0470752/\">Ex Machina</a>.",
+    "option1": "Musk",
+    "option2": "Brin/Page",
+    "option1_img": "Elon_Musk.jpg",
+    "option2_img": "Sergey_Brin.jpg"
+  },
+  {
+    "question_id": "Salvation",
+    "label": "Santiago Cabrera in <a href=\"https://www.imdb.com/title/tt6170874/\">Salvation</a>.",
+    "option1": "Musk",
+    "option2": "Branson",
+    "option1_img": "Elon_Musk.jpg",
+    "option2_img": "Richard_Branson.jpg"
+  }
+]

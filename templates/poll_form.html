@@ -1,0 +1,24 @@
+<!-- Voting form for the straw poll. -->
+<!doctype html>
+<html>
+<title>Straw Poll - Voting Form</title>
+<body>
+<h1>Voting Form</h1>
+It's the burning question of our age... In these dramas, how much are they based on real-life CEOs?<br>
+Please cast your votes below.<br><br>
+<form action="" method="post" name="post">
+    {% for slider in parm_form.sliders %}
+        <em>{{ parm_form.label[loop.index - 1]|safe }}</em><br>
+        <img src="{{ parm_form.option1_img[loop.index - 1]}}">
+        {{ slider(min=0, max=100) }}
+        <img src="{{ parm_form.option2_img[loop.index - 1]}}"><br>
+        {{ parm_form.option1[loop.index - 1] }}           {{ parm_form.option2[loop.index - 1] }}<br><br>
+    {% endfor %}
+
+    {{ parm_form.email.label }}<br>
+    {{ parm_form.email }}
+    <br><br>
+    <input type="submit" value="Submit">
+</form>
+</body>
+</html>
