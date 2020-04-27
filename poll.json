@@ -4,23 +4,29 @@
     "label": "Forest (CEO of Amaya) in <a href=\"https://www.imdb.com/title/tt8134186/\">DEVS</a>.",
     "option1": "Musk",
     "option2": "Jobs",
-    "option1_img": "Elon_Musk.jpg",
-    "option2_img": "Steve_Jobs.jpg"
+    "option1_static": "Elon_Musk.jpg",
+    "option2_static": "Steve_Jobs.jpg",
+    "option1_cdn": "https://cdn.glitch.com/4cf09075-fe33-4aff-be55-406ca1d99f9c%2FElon_Musk.jpg?v=1587983654931",
+    "option2_cdn": "https://cdn.glitch.com/4cf09075-fe33-4aff-be55-406ca1d99f9c%2FSteve_Jobs.jpg?v=1587983663303"
   },
   {
     "question_id": "Ex Machina",
     "label": "Nathan Bateman in <a href=\"https://www.imdb.com/title/tt0470752/\">Ex Machina</a>.",
     "option1": "Musk",
     "option2": "Brin/Page",
-    "option1_img": "Elon_Musk.jpg",
-    "option2_img": "Sergey_Brin.jpg"
+    "option1_static": "Elon_Musk.jpg",
+    "option2_static": "Sergey_Brin.jpg",
+    "option1_cdn": "https://cdn.glitch.com/4cf09075-fe33-4aff-be55-406ca1d99f9c%2FElon_Musk.jpg?v=1587983654931",
+    "option2_cdn": "https://cdn.glitch.com/4cf09075-fe33-4aff-be55-406ca1d99f9c%2FSergey_Brin.jpg?v=1587983663276"
   },
   {
     "question_id": "Salvation",
     "label": "Santiago Cabrera in <a href=\"https://www.imdb.com/title/tt6170874/\">Salvation</a>.",
     "option1": "Musk",
     "option2": "Branson",
-    "option1_img": "Elon_Musk.jpg",
-    "option2_img": "Richard_Branson.jpg"
+    "option1_static": "Elon_Musk.jpg",
+    "option2_static": "Richard_Branson.jpg",
+    "option1_cdn": "https://cdn.glitch.com/4cf09075-fe33-4aff-be55-406ca1d99f9c%2FElon_Musk.jpg?v=1587983654931",
+    "option2_cdn": "https://cdn.glitch.com/4cf09075-fe33-4aff-be55-406ca1d99f9c%2FRichard_Branson.jpg?v=1587983663435"
   }
 ]

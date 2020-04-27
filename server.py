@@ -11,6 +11,7 @@ import json
 
 
 DEBUG_ENABLED = '-d' in argv
+CDN_ENABLED = '-cdn' in argv
 
 
 def debug(msg):
@@ -52,9 +53,13 @@ class PollForm(Form):
             self.option1.append(each_question['option1'])
             self.option2.append(each_question['option2'])
 
-            # Work out the complete URL for each image file.
-            self.option1_img.append(url_for('static', filename=each_question['option1_img']))
-            self.option2_img.append(url_for('static', filename=each_question['option2_img']))
+            if CDN_ENABLED:
+                self.option1_img.append(each_question['option1_cdn'])
+                self.option2_img.append(each_question['option2_cdn'])
+            else:
+                # Work out the complete URL for each image file.
+                self.option1_img.append(url_for('static', filename=each_question['option1_static']))
+                self.option2_img.append(url_for('static', filename=each_question['option2_static']))
 
 
 def calc_votes(all_votes: list) -> dict:
@@ -82,6 +87,7 @@ def calc_votes(all_votes: list) -> dict:
 load_dotenv(verbose=True)           # Set operating system environment variables based on contents of .env file.
 
 votes_table = UsersTable(table_name=getenv('VOTES_TABLE'))
+
 
 # Homepage.
 @app.route("/", methods=['GET', 'POST'])
