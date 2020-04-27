@@ -1,3 +1,5 @@
+# Server for the Straw Poll website.
+
 from flask import Flask, render_template, request, redirect, url_for
 from wtforms import Form, StringField, validators, FieldList
 from wtforms.fields.html5 import DecimalRangeField
@@ -22,11 +24,6 @@ f = open('poll.json', 'r')
 whole_json = (f.read())
 POLL = json.loads(whole_json)
 f.close()
-print(POLL)
-
-
-print(json.dumps(POLL))
-
 
 NUM_QUESTIONS = len(POLL)
 
@@ -50,8 +47,6 @@ class PollForm(Form):
     option1_img, option2_img = [], []   # Images for options.
 
     def set_questions(self, parm_questions: list):
-        # print(url_for('static', filename='Elon_Musk_2015.jpg'))
-
         for each_question in parm_questions:
             self.label.append(each_question['label'])
             self.option1.append(each_question['option1'])
@@ -69,14 +64,12 @@ def calc_votes(all_votes: list) -> dict:
     # Fill it with zeros.
     for each_question in POLL:
         calc_results[each_question['question_id']] = 0.0
-    # print(results)
 
     # Add each users' votes to the results.
     num_users = 0
     for each_user in all_votes:
         num_users += 1
         for each_question in each_user:
-            # print(each_question)
             calc_results[each_question['question_id']] += each_question['vote']
 
     # Work out the mean average.
@@ -90,13 +83,11 @@ load_dotenv(verbose=True)           # Set operating system environment variables
 
 votes_table = UsersTable(table_name=getenv('VOTES_TABLE'))
 
-
-
+# Homepage.
 @app.route("/", methods=['GET', 'POST'])
 def home():
     form = PollForm()
     form.set_questions(parm_questions=POLL)
-
 
     if request.method == 'GET':
         return render_template('poll_form.html', parm_form=form)
@@ -129,13 +120,11 @@ def home():
         return redirect(url_for('results'))
 
 
+# Results page.
 @app.route("/results", methods=['GET'])
 def results():
-
     votes = votes_table.scan_values()
     scores = calc_votes(votes)
-
-    # print('scores=', scores)
 
     # Make list of dictionaries with everything in them needed for results page.
     results_list = []
@@ -144,8 +133,6 @@ def results():
         question_plus_vote = each_question
         question_plus_vote['vote'] = scores[this_question_id]
         results_list.append(question_plus_vote)
-
-    print(results_list)
 
     # Render template for results, passing list to it as parm.
     return render_template('results.html',

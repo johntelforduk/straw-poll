@@ -1,5 +1,7 @@
 # Straw Poll
-Website to take run a quick survey.
+![status](https://img.shields.io/badge/status-ready%20to%20use-green)
+
+Website to run a quick survey.
 
 #### Installation
 ```
@@ -19,3 +21,6 @@ AWS_SECRET_ACCESS_KEY=<your secret access key>
 AWS_DEFAULT_REGION=<your region>
 VOTES_TABLE=<your DynamoDB table name>
 ```
+
+#### Attribution
+All images obtained from [Wikimedia Commons](https://commons.wikimedia.org/) and used under the terms of their Creative Commons licenses).

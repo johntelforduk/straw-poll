@@ -1,18 +1,40 @@
 <!-- Voting form for the straw poll. -->
 <!doctype html>
 <html>
-<title>Straw Poll - Voting Form</title>
+<head>
+    <title>Straw Poll - Voting Form</title>
+    <style>
+    figure {
+      display: inline-block;
+      margin-top: 1em;
+      margin-bottom: 1em;
+      margin-left: 10px;
+      margin-right: 10px;
+      margin-top: 1px;
+      margin-bottom: 10px;
+    }
+    </style>
+</head>
 <body>
 <h1>Voting Form</h1>
-It's the burning question of our age... In these dramas, how much are they based on real-life CEOs?<br>
-Please cast your votes below.<br><br>
+It's the burning question of our age... In these dramas, which real-life CEOs are they based on?<br>
+Please cast your votes below.<br>
 <form action="" method="post" name="post">
     {% for slider in parm_form.sliders %}
-        <em>{{ parm_form.label[loop.index - 1]|safe }}</em><br>
-        <img src="{{ parm_form.option1_img[loop.index - 1]}}">
+        <h4>{{ parm_form.label[loop.index - 1]|safe }}</h4>
+        <figure>
+            <img src="{{ parm_form.option1_img[loop.index - 1]}}">
+            <figcaption>
+                {{ parm_form.option1[loop.index - 1] }}
+            </figcaption>
+        </figure>
         {{ slider(min=0, max=100) }}
-        <img src="{{ parm_form.option2_img[loop.index - 1]}}"><br>
-        {{ parm_form.option1[loop.index - 1] }}           {{ parm_form.option2[loop.index - 1] }}<br><br>
+        <figure>
+            <img src="{{ parm_form.option2_img[loop.index - 1]}}">
+            <figcaption>
+                {{ parm_form.option2[loop.index - 1] }}
+            </figcaption>
+        </figure><br>
     {% endfor %}
 
     {{ parm_form.email.label }}<br>
@@ -20,5 +42,6 @@ Please cast your votes below.<br><br>
     <br><br>
     <input type="submit" value="Submit">
 </form>
+<br><br>(Attribution: All images obtained from <a href="https://commons.wikimedia.org/">Wikimedia Commons</a> and used under the terms of their Creative Commons licenses).
 </body>
 </html>
