@@ -22,5 +22,16 @@ AWS_DEFAULT_REGION=<your region>
 VOTES_TABLE=<your DynamoDB table name>
 ```
 
+#### Poll design
+Poll questions can be defined by changing the `poll.json` file.
+
+#### To run it
+```
+python server.py
+```
+`-d` argument to send debug info to stdout.
+
+`-cdn` argument to serve graphic images from [CDN](https://en.wikipedia.org/wiki/Content_delivery_network). Otherwise, graphics are served from static folder on server.
+
 #### Attribution
 All images obtained from [Wikimedia Commons](https://commons.wikimedia.org/) and used under the terms of their Creative Commons licenses).
